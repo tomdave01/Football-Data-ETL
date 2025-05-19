@@ -8,11 +8,6 @@ load_dotenv()
 
 API_URL = os.getenv('FBREF_BASE_URL')
 API_KEY = os.getenv('FBREF_API_KEY')
-params = {
-            'league_id': '9' ,  
-            'season_id': '2024-2025'
-        }
-HEADERS = {'X-API-KEY': API_KEY}
 
 def get_team_stats():
     """
