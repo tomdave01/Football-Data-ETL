@@ -20,8 +20,11 @@ def get_team_stats():
     HEADERS = {'X-API-KEY': API_KEY}
     response = requests.get(f'{API_URL}/team-season-stats', params=params, headers=HEADERS)
     if response.status_code == 200:
-        print(response.json())
+        return response.json()
     else:
-        print(f"Error: {response.status_code} - {response.text}")
+        return {
+            'status_code': response.status_code,
+            'error': response.json()
+        }
 
-get_team_stats()
+#print(get_team_stats())
