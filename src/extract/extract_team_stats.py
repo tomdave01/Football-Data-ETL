@@ -20,6 +20,10 @@ def get_team_stats():
     HEADERS = {'X-API-KEY': API_KEY}
     response = requests.get(f'{API_URL}/team-season-stats', params=params, headers=HEADERS)
     if response.status_code == 200:
+        filename = f'data/raw/team_stats.json'
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        with open(filename, 'w') as f:
+            json.dump(response.json(), f)
         return response.json()
     else:
         return {
@@ -27,4 +31,3 @@ def get_team_stats():
             'error': response.json()
         }
 
-#print(get_team_stats())
