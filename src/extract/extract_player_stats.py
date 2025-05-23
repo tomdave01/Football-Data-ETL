@@ -1,7 +1,6 @@
 import requests
 import os
 import json
-import pandas as pd
 from dotenv import load_dotenv
 from extract_team_stats import get_team_stats
 
@@ -25,7 +24,7 @@ def get_players_stats():
         HEADERS = {'X-API-KEY': API_KEY}
         response = requests.get(f'{API_URL}/player-season-stats', params=params, headers=HEADERS)
         if response.status_code == 200:
-            filename = f'data/players/team_{team_name}_players.json'
+            filename = f'data/raw/{team_name}/players_stats.json'
             os.makedirs(os.path.dirname(filename), exist_ok=True)
             with open(filename, 'w') as f:
                 json.dump(response.json(), f)
@@ -34,6 +33,3 @@ def get_players_stats():
             'status_code': response.status_code,
             'error': response.json()
         }
-
-get_players_stats()
-
