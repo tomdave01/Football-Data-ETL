@@ -116,4 +116,6 @@ def transform_team_stats():
         'miscellaneous_stats': miscellaneous_stats_df
     }
 
+if __name__ == "__main__":
+    transform_team_stats()
         

@@ -30,3 +30,5 @@ def get_team_stats():
             'error': response.json()
         }
 
+if __name__ == "__main__":
+    get_team_stats()
