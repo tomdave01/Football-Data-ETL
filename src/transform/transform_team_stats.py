@@ -88,19 +88,19 @@ def transform_team_stats():
         miscellaneous_stats['team_name'] = team_name
         miscellaneous_stats_df = pd.concat([miscellaneous_stats_df, miscellaneous_stats], ignore_index=True)
 
-    os.makedirs('data/processed', exist_ok=True)
-    general_stats_df.to_csv('data/processed/general_stats.csv', index=False)
-    keeper_stats_df.to_csv('data/processed/keeper_stats.csv', index=False)
-    keeper_stats_advanced_df.to_csv('data/processed/keeper_stats_advanced.csv', index=False)
-    shooting_stats_df.to_csv('data/processed/shooting_stats.csv', index=False)
-    passing_stats_df.to_csv('data/processed/passing_stats.csv', index=False)
-    passing_types_stats_df.to_csv('data/processed/passing_types_stats.csv', index=False)
-    goal_creation_stats_df.to_csv('data/processed/goal_creation_stats.csv', index=False)
-    defense_stats_df.to_csv('data/processed/defense_stats.csv', index=False)
-    possession_stats_df.to_csv('data/processed/possession_stats.csv', index=False)
-    playing_time_stats_df.to_csv('data/processed/playing_time_stats.csv', index=False)
-    miscellaneous_stats_df.to_csv('data/processed/miscellaneous_stats.csv', index=False)
-    print("Data transformation complete. Processed files saved in 'data/processed' directory.")
+    os.makedirs('data/processed/team_stats', exist_ok=True)
+    general_stats_df.to_csv('data/processed/team_stats/general_stats.csv', index=False)
+    keeper_stats_df.to_csv('data/processed/team_stats/keeper_stats.csv', index=False)
+    keeper_stats_advanced_df.to_csv('data/processed/team_stats/keeper_stats_advanced.csv', index=False)
+    shooting_stats_df.to_csv('data/processed/team_stats/shooting_stats.csv', index=False)
+    passing_stats_df.to_csv('data/processed/team_stats/passing_stats.csv', index=False)
+    passing_types_stats_df.to_csv('data/processed/team_stats/passing_types_stats.csv', index=False)
+    goal_creation_stats_df.to_csv('data/processed/team_stats/goal_creation_stats.csv', index=False)
+    defense_stats_df.to_csv('data/processed/team_stats/defense_stats.csv', index=False)
+    possession_stats_df.to_csv('data/processed/team_stats/possession_stats.csv', index=False)
+    playing_time_stats_df.to_csv('data/processed/team_stats/playing_time_stats.csv', index=False)
+    miscellaneous_stats_df.to_csv('data/processed/team_stats/miscellaneous_stats.csv', index=False)
+    print("Data transformation complete. Processed files saved in 'data/processed/team_stats' directory.")
 
     return {
         'general_stats': general_stats_df,

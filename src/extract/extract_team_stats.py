@@ -23,6 +23,7 @@ def get_team_stats():
         os.makedirs(os.path.dirname(filename), exist_ok=True)
         with open(filename, 'w') as f:
             json.dump(response.json(), f)
+        print(f"Data saved to {filename}")
         return response.json()
     else:
         return {
