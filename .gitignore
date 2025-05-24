@@ -2,3 +2,4 @@
 /.venv
 /src/extract/__pycache__
 data/raw/*
+data/processed/*

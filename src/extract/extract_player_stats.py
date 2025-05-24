@@ -2,7 +2,7 @@ import requests
 import os
 import json
 from dotenv import load_dotenv
-from extract_team_stats import get_team_stats
+from extract_team_stats import get_team_details
 
 load_dotenv()
 
@@ -11,11 +11,11 @@ API_KEY = os.getenv('FBREF_API_KEY')
 
 def get_players_stats():
 
-    team_stats = get_team_stats()
+    team_details = get_team_details()
 
-    for team_data in team_stats['data']:
-        team_id = team_data['meta_data']['team_id']
-        team_name = team_data['meta_data']['team_name']
+    for team_data in team_details:
+        team_id = team_data['team_id']
+        team_name = team_data['team_name']
         
         params = {
             'team_id': team_id ,
@@ -33,3 +33,6 @@ def get_players_stats():
             'status_code': response.status_code,
             'error': response.json()
         }
+
+if __name__ == "__main__":
+    get_players_stats()
