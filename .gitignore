@@ -1,5 +1,6 @@
 .env
 /.venv
-/src/extract/__pycache__
+/src/extract/__pycache__/
 data/raw/*
 data/processed/*
+database.ini
