@@ -127,9 +127,8 @@ def create_table_from_csv(cur, csv_path, table_type='team'):
             else:
                 column_definitions.append(f"{col} FLOAT")
         else:
-            column_definitions.append(f"{col} TEXT")
-    
-    # Build CREATE TABLE statement based on table type
+            column_definitions.append(f"{col} TEXT")    
+
     if table_type == 'team':
         create_table_sql = f"""
         CREATE TABLE IF NOT EXISTS football.{table_name} (
@@ -142,7 +141,7 @@ def create_table_from_csv(cur, csv_path, table_type='team'):
                 REFERENCES football.teams (team_id, league_id, season_id)
         )
         """
-    else:  # player
+    else:  
         create_table_sql = f"""
         CREATE TABLE IF NOT EXISTS football.{table_name} (
             player_id TEXT NOT NULL,
@@ -157,7 +156,6 @@ def create_table_from_csv(cur, csv_path, table_type='team'):
                 REFERENCES football.teams (team_id, league_id, season_id)
         )
         """
-      # Execute CREATE TABLE statement
     cur.execute(create_table_sql)
     print(f"Table football.{table_name} created successfully.")
 
