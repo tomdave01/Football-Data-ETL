@@ -121,24 +121,30 @@ docker exec -it football_stats_db psql -U postgres -d football_stats
 
 ## Future Plans
 
-1. **Apache Airflow Integration**: 
+1. **Multi-League and Multi-Season Support**: 
+   - Expand coverage beyond the English Premier League
+   - Support historical data across multiple seasons
+   - Implement standardized data structures for cross-league analysis
+
+2. **Apache Airflow Integration**: 
    - Implement workflow orchestration for regular data updates
    - Add scheduling and monitoring capabilities
    - Create DAGs for different data processing workflows
 
-2. **Machine Learning with PySpark**:
+3. **Machine Learning with PySpark**:
    - Develop predictive models for game outcomes
    - Implement player performance prediction
    - Create feature engineering pipelines for model training
 
-3. **CI/CD with GitHub Actions**:
+4. **CI/CD with GitHub Actions**:
    - Automated testing of ETL components
    - Continuous deployment to cloud infrastructure
    - Quality checks for data integrity
 
-4. **Data Visualization Dashboard**:
+5. **Data Visualization Dashboard**:
    - Build interactive dashboards for statistics exploration
    - Create APIs to expose processed data
+   - Deploy metrics to monitor pipeline performance and data quality
 
 ## Contributing
 
